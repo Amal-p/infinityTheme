@@ -1,0 +1,17 @@
+{#
+   title: tag.html.twig 
+    Author: Amal - P
+    date: 2022-09-30 13:51:42
+#}
+
+
+<{{ tag_name }} {% if attributes %} {% for key,value in attributes %} {{ key }}="{{ value }}" {% endfor %} {% endif %}>
+{% if items %}
+{% for item in items %}
+    {{item | raw}}
+{% endfor %}
+{% endif %}
+{% if close_tag %}
+</{{ tag_name }}>
+{% endif %}
+

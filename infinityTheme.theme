@@ -1,0 +1,73 @@
+<?php
+
+/* title: infinityTheme.theme 
+Author: Amal - P
+date: 2022-12-28 14:07:39 
+
+Do not edit
+
+*/
+
+
+
+if(isset($argv[1])){
+  if(isset($argv[2])){
+
+    if(strpos($argv[1], 'p') !== false ){
+      $file_path = "pages/";
+      if(!is_file($file_path.'/'.$argv[2].'.php')){
+        $myfile = fopen($file_path.'/'.$argv[2].'.php', "w") or die("Unable to open file!");
+        $txt = "
+<?php\n\n\n
+\$page_content = [
+  
+];
+    ";
+        fwrite($myfile, $txt);
+      }
+    }
+    
+    if(strpos($argv[1], 'v') !== false ){
+      $file_path = "components/view";
+      if(!is_file($file_path.'/'.$argv[2].'/'.$argv[2].'.html.twig')){
+
+        if(!is_dir($file_path.'/'.$argv[2])){
+          mkdir($file_path.'/'.$argv[2]);
+        }
+        $myfile = fopen($file_path.'/'.$argv[2].'/'.$argv[2].'.html.twig', "w") or die("Unable to open file!");
+        $txt = "";
+        fwrite($myfile, $txt);
+      }
+    }
+    
+    if(strpos($argv[1], 'c') !== false ){
+      $file_path = "components";
+      if(!is_file($file_path.'/'.$argv[2].'/'.$argv[2].'.php')){
+
+        if(!is_dir($file_path.'/'.$argv[2])){
+          mkdir($file_path.'/'.$argv[2]);
+        }
+        $myfile = fopen($file_path.'/'.$argv[2].'/'.$argv[2].'.php', "w") or die("Unable to open file!");
+        $txt = "
+<?php
+
+
+\n\nuse Core\Core;
+
+\$obj = new Core;
+
+\$comp = \$obj->create( '' ,
+    \$values
+);
+
+        ";
+        fwrite($myfile, $txt);
+      }
+    }
+
+  }else{
+    echo "\n Please enter component name!!";
+  }
+
+
+}

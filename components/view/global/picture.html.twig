@@ -1,0 +1,13 @@
+{#
+   title: picture.html.twig 
+    Author: Amal - P
+    date: 2023-01-31 19:58:14
+#}
+<picture>
+  {% for picture in pictures %}
+    <source media="(min-width:{{ picture.breakpoint }}px)" srcset="{{ picture.image }}">
+  {% endfor %}
+  {% set last_element = pictures|last %}
+  {# <source media="(min-width:0px)" srcset="{{ last_element.image }}"> #}
+  <img src="{{ last_element.image }}" alt="{{last_element.image_alt}}" title="{{last_element.image_title}}">
+</picture>

@@ -1,0 +1,16 @@
+{#
+   title: link.html.twig 
+    Author: Amal - P
+    date: 2022-09-29 10:14:21
+#}
+
+<a href="{{ url }}" {% if id is not null %}id="{{ id }}"{% endif %} class="{{ class }}" {% if ('active' in class) and (type == 'page') %} aria-current="page" {% endif %} {% if type == 'button' %} type="button" {% endif %} {% if target is defined %} target="{{ target }}" {% endif %}
+>
+    {% if isSpan %}
+    <span>
+    {% endif %}
+        {{ link_label }}
+    {% if isSpan %}
+    </span>
+    {% endif %}
+</a>

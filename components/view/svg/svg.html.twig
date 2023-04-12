@@ -1,0 +1,20 @@
+{#
+   title: svg.html.twig 
+    Auther : Amal - P
+    date: 2022-10-03 14:59:30
+#}
+
+
+
+<svg width="{{ svg.width }}" height="{{ svg.height }}" viewBox="0 0 74 74" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clip-path="url(#_{{ svg.id }})">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="{{ svg.d }}"
+        fill="currentColor" />
+    </g>
+    <defs>
+      <clipPath id="_{{ id }}">
+        <rect width="{{ svg.width }}" height="{{ svg.height }}" fill="white" />
+      </clipPath>
+    </defs>
+  </svg>

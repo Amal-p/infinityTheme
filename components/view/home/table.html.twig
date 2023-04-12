@@ -1,0 +1,180 @@
+<div>
+	<h2>Short Codes</h2>
+	<table class="table table-bordered mx-auto">
+		<tr>
+			<th>Short Code</th>
+			<th>Usage</th>
+			<th>Appearing Code</th>
+		</tr>
+
+
+		<tr>
+			<td>
+				i-cmp
+			</td>
+			<td>
+				Create a Component
+			</td>
+			<td>
+				use Core\Core;
+				
+				$obj = new Core;
+				
+				
+				$comp = $obj->create(
+						'html with twig code',
+						$values
+				);
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				i-route
+			</td>
+			<td>
+				Get Route
+			</td>
+			<td>
+				$route = $proj->route();
+				$route variable returns an array have two values `page`, `page_content`
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				i-cmp-picker
+			</td>
+			<td>
+				Select a Component
+			</td>
+			<td>
+				$proj->compnent('component', [replacing text as key value pair]);
+
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				i-cmp-picker
+			</td>
+			<td>
+				Select a Component
+			</td>
+			<td>
+				$proj->compnent('component', [replacing text as key value pair]);
+
+			</td>
+		</tr>
+
+
+		<tr>
+			<td>
+				i-app
+			</td>
+			<td>
+				To run the app
+			</td>
+			<td>
+				require 'wp-content/themes/infinityTheme/core/App.php';
+				use App\App;
+				
+				$proj = new App();
+				
+				$proj -> run('component_name', ['value to pass the component']);
+
+				<h2>Note :-</h2>
+				component_name must the file name
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				i-temp
+			</td>
+			<td>
+				To set Template Name
+			</td>
+			<td>
+
+				/* Template Name: template_name */
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				i-run
+			</td>
+			<td>
+				To get run function
+			</td>
+			<td>
+				$object_variable -> run('component_name', ['value to pass the component']);
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				i-home
+			</td>
+			<td>
+				To get home url
+			</td>
+			<td>
+				home_url();
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				i-tmp-uri
+			</td>
+			<td>
+				To get Template url
+			</td>
+			<td>
+				get_template_directory_uri();
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				i-slug
+			</td>
+			<td>
+				To post slug
+			</td>
+			<td>
+				global $post;
+				<br>
+				$post_slug = $post->post_name;
+
+			</td>
+		</tr>
+
+		<tr>
+			<td>
+				i-post-fetch
+			</td>
+			<td>
+				To fetch code of Custom post
+			</td>
+			<td>
+				Array with while loop and WPquery class
+
+			</td>
+		</tr>
+
+
+	</table>
+	Global components presents <em>global</em> folder<br>
+	SVG presents in <em>svg</em> folder<br>
+	The demo code will also inside theme<br>
+</div>

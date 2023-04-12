@@ -1,0 +1,137 @@
+{
+	// Place your wordpress-boilerplate-twig workspace snippets here. Each snippet is defined under a snippet name and has a scope, prefix, body and 
+	// description. Add comma separated ids of the languages where the snippet is applicable in the scope field. If scope 
+	// is left empty or omitted, the snippet gets applied to all languages. The prefix is what is 
+	// used to trigger the snippet and the body will be expanded and inserted. Possible variables are: 
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. 
+	// Placeholders with the same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"scope": "javascript,typescript",
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	"Component": {
+		"scope": "php",
+		"prefix": "i-cmp",
+		"body": [
+			"use Core\\Core;",
+			"",
+			"$$obj = new Core;",
+			"",
+			"$$comp = $$obj->create( '$1' ,",
+			"    $$values",
+			");"
+		],
+		"description": "Create a Component"
+	},
+
+	"Route": {
+		"scope": "php",
+		"prefix": "i-route",
+		"body": [
+			"$$route = $$proj->route();",
+		],
+		"description": "Call Route function"
+	},
+
+	"Component-Picker": {
+		"scope": "php",
+		"prefix": "i-cmp-picker",
+		"body": [
+			"$${1:proj} -> component('$2',[$3]),",
+		],
+		"description": "Call a Component inside component"
+	},
+
+	"App": {
+		"scope": "php",
+		"prefix": "i-app",
+		"body": [
+			"require 'wp-content/themes/infinityTheme/core/App.php';",
+			"",
+			"use App\\App;",
+			"",
+			"$$proj = new App();",
+			"",
+			"$$proj -> run('$1', [$2]);",
+		],
+		"description": "To get the app"
+	},
+
+	"Template Name": {
+		"scope": "php",
+		"prefix": "i-temp",
+		"body": [
+			"/* Template Name: $1 */",
+		],
+		"description": "To get Template Name"
+	},
+
+	"Run": {
+		"scope": "php",
+		"prefix": "i-run",
+		"body": [
+			"$${1:proj} -> run('$2', [$3]);",
+		],
+		"description": "To get run function"
+	},
+
+	"Home-Url": {
+		"scope": "php",
+		"prefix": "i-home",
+		"body": [
+			"home_url();",
+		],
+		"description": "To get home url"
+	},
+
+	"Template URL": {
+		"scope": "php",
+		"prefix": "i-tmp-uri",
+		"body": [
+			"get_template_directory_uri();",
+		],
+		"description": "To get Template url"
+	},
+
+	"Post slug": {
+		"scope": "php",
+		"prefix": "i-slug",
+		"body": [
+			"global $$post;",
+			"$$post_slug = $$post->post_name;"
+		],
+		"description": "To get post slug"
+	},
+
+	"Custom post fetch": {
+		"scope": "php",
+		"prefix": "i-post-fetch",
+		"body": [
+			"$$args = array(",
+	  "        'post_type' => '$1',",
+	  "        'posts_per_page' => $2,",
+	  "        '${3:meta_key}'       => '$4',",
+	  "        'orderby' => '$5',",
+	  "        'order' => '$6'",
+	  "      );",
+
+	  "      // Query the posts:",
+	  "      $$obituary_query = new WP_Query($$args);",
+	  "",
+	  "      // Loop through the obituaries:",
+	  "      while ($$obituary_query->have_posts()) : $$obituary_query->the_post();",
+	  "",
+	  "             $7 ",
+	  "",
+
+	  "      endwhile;",
+	  "      wp_reset_postdata();"
+		],
+		"description": "To fetch code of Custom post"
+	},
+}

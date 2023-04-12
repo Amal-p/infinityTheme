@@ -1,0 +1,15 @@
+{#
+   title: div.html.twig 
+    Author: Amal - P
+    date: 2022-09-28 12:29:30
+#}
+
+
+<div class="{{ div_class }}" {% if id %} id="{{ id }}" {% endif %}
+>
+    {% if items %}
+    {% for item in items %}
+        {{item | raw}}
+    {% endfor %}
+    {% endif %}
+</div>

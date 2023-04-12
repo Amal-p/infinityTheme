@@ -1,0 +1,52 @@
+<main>
+
+<div class="container content" role="main">
+
+<h2>Installation</h2><br>
+<h3>Note</h3><br>
+<ul>
+<li>The theme folder name must the infinityTheme</li>
+<li>composer install if it have any vendor folder composer install</li>
+<li>move <em>.vscode/infinityTheme.code-snippets</em>s to base folder</li>
+</ul>
+<h2>Setup Page's</h2>
+<ul>
+
+<li>Open \pages\ folder create page_name.php file</li>
+<li>Setup it as page by wordpress template method</li>
+<li>Call the App</li>
+<li>Call the run method to load direct component</li>
+<li>If a component inside another component date call the component method inside array, and inside twig give - | raw eg :- {{ '{{ variable_name | raw }}' }}</li>
+
+</ul>
+
+<h2>Setup Component</h2>
+<ul>
+
+<li>Create component file inside <em>components</em> folder</li>
+<li>Call <em>Core</em> class</li>
+<li>Call <em>create</em> function with <em>HTML - Twig as first parameter</em>, and $values second parameter</li>
+
+</ul>
+
+<h3>Note :-</h3>
+<ul>
+
+<li>There a view folder you can create .html.twig to create twig file call the file name as first parameter</li>
+<li>$values is must not change</li>
+
+
+</ul>
+
+
+{{ table | raw }}
+{{ terminal | raw }}
+
+<h2>Twig Global variables inside theme</h2>
+<li><em>post_slug</em> -> To get current slug</li>
+<li><em>template_directory</em> -> To get template directory path</li>
+<li><em>home_url</em> -> To get Home url</li>
+
+</div>
+
+</main>
